@@ -1,6 +1,8 @@
 **Image Resizer Tool** 
+
 A simple Image Resizer Tool built using Python Flask, HTML, and CSS.
 This tool allows users to upload an image, set custom width & height, resize the image, preview the result, and download it.
+
 **Features**
 Upload any image (JPG, PNG, JPEG, etc.)
 
