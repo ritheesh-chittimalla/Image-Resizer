@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Resizer Tool</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>📸 Image Resizer Tool</h1>
+        <form method="post" enctype="multipart/form-data">
+            <label for="file">Choose an image:</label>
+            <input type="file" name="file" id="file" required>
+
+            <label for="format">Convert to format:</label>
+            <select name="format" id="format">
+                <option value="JPEG">JPEG</option>
+                <option value="PNG">PNG</option>
+                <option value="WEBP">WEBP</option>
+            </select>
+
+            <button type="submit">Upload & Resize</button>
+        </form>
+
+        {% if success %}
+            <p>✅ Image processed successfully!</p>
+            <a href="{{ url_for('resized_file', filename=filename) }}" download>Download {{ filename }}</a>
+        {% endif %}
+    </div>
+</body>
+</html>
